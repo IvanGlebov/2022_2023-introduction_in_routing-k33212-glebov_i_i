@@ -22,7 +22,7 @@ Date of finished: 06.10.2022
 
 ## Топология сети
 
-[Network topology]("./assets/Lab_1_topo.png")
+![Network topology](./assets/Lab_1_topo.png)
 
 ## Разворачивание
 
