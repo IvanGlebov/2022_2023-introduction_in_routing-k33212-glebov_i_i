@@ -1,0 +1,47 @@
+name: lab2
+
+mgmt:
+  network: IotaNetwork
+  ipv4_subnet: 172.20.22.0/24
+
+topology:
+  nodes:
+    R01.MSK:
+      kind: vr-ros
+      image: vrnetlab/vr-routeros:6.47.9
+      mgmt_ipv4: 172.20.22.2
+    
+    R01.FRT:
+      kind: vr-ros
+      image: vrnetlab/vr-routeros:6.47.9
+      mgmt_ipv4: 172.20.22.3
+
+    R01.BRL:
+      kind: vr-ros
+      image: vrnetlab/vr-routeros:6.47.9
+      mgmt_ipv4: 172.20.22.4
+
+
+    PC1: 
+      kind: vr-ros
+      image: vrnetlab/vr-routeros:6.47.9
+      mgmt_ipv4: 172.20.22.12
+
+    PC2: 
+      kind: vr-ros
+      image: vrnetlab/vr-routeros:6.47.9
+      mgmt_ipv4: 172.20.22.13
+
+    PC3: 
+      kind: vr-ros
+      image: vrnetlab/vr-routeros:6.47.9
+      mgmt_ipv4: 172.20.22.14
+
+  links:
+    - endpoints: ["R01.MSK:eth1", "R01.BRL:eth1"]
+    - endpoints: ["R01.BRL:eth2", "R01.FRT:eth1"]
+    - endpoints: ["R01.MSK:eth2", "R01.FRT:eth2"]
+
+    - endpoints: ["R01.MSK:eth3", "PC1:eth3"]
+    - endpoints: ["R01.FRT:eth3", "PC2:eth3"]
+    - endpoints: ["R01.BRL:eth3", "PC3:eth3"]
