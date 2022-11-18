@@ -1,3 +1,5 @@
 .topology.clab.yml.bak
 .topology.yml.bak
 clab-lab*
+.obsidian
+.DS_Store
