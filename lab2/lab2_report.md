@@ -24,7 +24,7 @@ Date of finished: 18.10.2022
 
 ## <a name="networkTopology"></a>Топология сети 
 
-![[Topology.png]]
+![Topology](./assets/Topology.png)
 
 ## Разворачивание
 
